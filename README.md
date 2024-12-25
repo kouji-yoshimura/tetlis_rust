@@ -6,14 +6,14 @@ $ cargo run
 ```
 
 ## Key Map
-←: Move left
-→: Move right
-↑: Rotate clockwise
-↓: Soft drop
-C: Hold
-X: Rotate clockwise
-Z: Rotate counter clockwise
-Q: Restart
-Space: Hard drop
-Shift: Hold
+- ←: Move left
+- →: Move right
+- ↑: Rotate clockwise
+- ↓: Soft drop
+- C: Hold
+- X: Rotate clockwise
+- Z: Rotate counter clockwise
+- Q: Restart
+- Space: Hard drop
+- Shift: Hold
 
