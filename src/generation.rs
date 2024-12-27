@@ -46,7 +46,7 @@ pub fn shift_tetrimino_queue(
 
 pub fn refresh_queue(
     mut commands: Commands,
-    mut game: ResMut<Game>,
+    game: Res<Game>,
     mut query: Query<(Entity, &Queue)>,
 ) {
     for (entity, queue) in query.iter_mut() {

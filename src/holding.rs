@@ -44,7 +44,7 @@ pub fn place_tetrimino_from_holding(
 pub fn refresh_holding(
     mut commands: Commands,
     mut materials: ResMut<Assets<ColorMaterial>>,
-    mut game: ResMut<Game>,
+    game: Res<Game>,
     mut query: Query<(Entity, &Holding)>,
 ) {
     for (entity, holding) in query.iter_mut() {

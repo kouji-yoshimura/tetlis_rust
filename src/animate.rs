@@ -7,7 +7,7 @@ use crate::resources::*;
 pub fn render(
     mut commands: Commands,
     mut materials: ResMut<Assets<ColorMaterial>>,
-    mut game: ResMut<Game>,
+    game: Res<Game>,
     mut query: Query<(Entity, &Position), With<Cell>>,
 ) {
     for (entity, position) in query.iter_mut() {

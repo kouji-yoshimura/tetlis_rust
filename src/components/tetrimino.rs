@@ -4,7 +4,9 @@ use rand::{
     Rng,
 };
 
-pub const TETRIMINO_PATTERNS: [[(isize, isize); 4]; 7] = [
+pub const NUMBER_OF_TETRIMINO_BLOCKS: usize = 4;
+
+pub const TETRIMINO_PATTERNS: [[(isize, isize); NUMBER_OF_TETRIMINO_BLOCKS]; 7] = [
     [(0, 0), (0, 1), (1, 0), (1, 1)],   // TypeO
     [(0, 0), (0, -1), (0, 1), (0, 2)],  // TypeI
     [(0, 0), (0, -1), (0, 1), (1, 0)],  // TypeT
@@ -94,7 +96,7 @@ pub struct Queue {
 pub fn tetrimino_pattern_from_tetrimino(
     tetrimino: Tetrimino,
     facing: Option<Facing>,
-) -> [(isize, isize); 4] {
+) -> [(isize, isize); NUMBER_OF_TETRIMINO_BLOCKS] {
     let pattern = match tetrimino {
         Tetrimino::TypeO => TETRIMINO_PATTERNS[0],
         Tetrimino::TypeI => TETRIMINO_PATTERNS[1],
@@ -106,7 +108,7 @@ pub fn tetrimino_pattern_from_tetrimino(
     };
 
     let facing = facing.unwrap_or(Facing::North);
-    let mut faced_pattern: [(isize, isize); 4] = [(0, 0); 4];
+    let mut faced_pattern: [(isize, isize); NUMBER_OF_TETRIMINO_BLOCKS] = [(0, 0); NUMBER_OF_TETRIMINO_BLOCKS];
     for (i, (x, y)) in pattern.iter().enumerate() {
         faced_pattern[i] = match facing {
             Facing::North => (*x, *y),

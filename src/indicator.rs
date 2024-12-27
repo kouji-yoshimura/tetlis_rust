@@ -5,7 +5,7 @@ use crate::resources::*;
 pub fn refresh_texts(
     mut commands: Commands,
     query: Query<&Children, With<Indicator>>,
-    mut q_child: Query<(Entity, &IndicatorType)>,
+    q_child: Query<(Entity, &IndicatorType)>,
     game: Res<Game>,
 ) {
     for children in query.iter() {
